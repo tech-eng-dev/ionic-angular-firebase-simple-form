@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+    <ion-item 
+      lines="full"
+      [ngClass]="{'invalid-input-error-item' : !loginForm.get('name').valid && loginForm.get('name').dirty}">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!loginForm.get('name').valid && loginForm.get('name').dirty" lines="none">
+      <small class="invalid-input-error-txt">You must enter a valid name.</small>
+    </ion-item>
+
+    <ion-item 
+      lines="full"
+      [ngClass]="{'invalid-input-error-item' : !loginForm.get('password').valid && loginForm.get('password').dirty}">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!loginForm.get('password').valid && loginForm.get('password').dirty" lines="none" >
+      <small class="invalid-input-error-txt">You must enter a valid password.</small>
+    </ion-item>
+
+    <ion-item 
+      lines="full"
+      [ngClass]="{'invalid-input-error-item' : !loginForm.get('polynomial').valid && loginForm.get('polynomial').dirty}">
+      <ion-label position="floating">Polynomial</ion-label>
+      <ion-input formControlName="polynomial" type="text"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!loginForm.get('polynomial').valid && loginForm.get('polynomial').dirty" lines="none">
+      <small class="invalid-input-error-txt">You must enter a valid polynomial.</small>
+    </ion-item>
+
+    <ion-row class="ion-padding-top">
+      <ion-col>
+        <ion-button 
+          type="submit" 
+          color="danger" 
+          expand="block"
+          [disabled]="!loginForm.valid">Submit</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

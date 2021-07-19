@@ -1,0 +1,16 @@
+.ion-invalid.ion-touched ion-label {
+  color: var(--highlight-color-invalid);
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid var(--highlight-color-invalid);
+}
+
+.invalid-input-error-item {
+  border-bottom: 1px solid var(--highlight-color-invalid);
+  --border-style: none;
+}
+
+.invalid-input-error-txt {
+  color: var(--highlight-color-invalid);
+}
